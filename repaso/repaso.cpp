@@ -2,10 +2,16 @@
 #include <vector>
 using namespace std;
 
+struct date{
+  int dia;
+  int mes;
+  int año;
+}
+
 struct Empleado {
     string nombre;
     string apellido;
-    int fecha;
+    date fecha;
     string sexo;
     int salario;
 };
