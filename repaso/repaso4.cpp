@@ -34,7 +34,7 @@ void Registrar_paciente(vector<paciente> &pacientes,int &n_historial){
     n_historial++;
     persona.numero_historial=n_historial;
     pacientes.push_back(persona);
-    
+
 
 }
 
@@ -86,7 +86,7 @@ void mostrar_citas(vector<paciente> &pacientes){
 
 void buscar_data(vector<paciente> &pacientes){
     int n_historial;    
-    cout << "ingrese su numero de historial para cancelar la cita" << endl;
+    cout << "ingrese su numero de historial para encontrar los datos del paciente" << endl;
     cin >> n_historial; 
     for (int i = 0; i < pacientes.size(); i++)
     {
@@ -98,20 +98,18 @@ void buscar_data(vector<paciente> &pacientes){
 
 
 int main(){
+
     int n_historial=0;
+    vector<paciente> pacientes;
         while(true){
             int opcion=0;
-            vector<paciente> pacientes;
             cout << "elija una opcion, si quiere salir escriba 0" << endl;
             cout << "1) Registrar y sacar cita"  << endl;
             cout << "2) Cancelar cita " << endl;
             cout << "3) Mostrar citas" << endl;
             cout << "4) Buscar imformacion" << endl;
             cin >> opcion;
-            for (int i = 0; i < pacientes.size(); i++)
-    {
-             cout << "Paciente "<< pacientes[i].nombre << " con "<< pacientes[i].edad << "años, tiene el numero de historial "  << pacientes[i].numero_historial << " ,tiene cita e la fecha " << pacientes[i].fecha_cita.dia << '/' << pacientes[i].fecha_cita.mes << '/' << pacientes[i].fecha_cita.mes << endl;
-            }
+
             switch (opcion)
             {
                 case 0 :
