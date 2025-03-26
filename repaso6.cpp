@@ -131,6 +131,23 @@ void cargar_partido(vector<partido> &partidos,vector<equipo> &torneo){
     partidos.push_back(actual_partido);
 }
 
+
+void mostrar_partido(vector<partido> partidos){
+    string l_equipo;
+    string v_equipo;
+    cout << "ingrese equipo local" << endl;
+    cin >> l_equipo;
+    cout << "ingrese equipo local" << endl;
+    cin >> v_equipo;
+    for (int i = 0; i < partidos.size(); i++)
+    {
+        if((partidos[i].local==l_equipo)and(v_equipo==partidos[i].visitante)){
+            cout << "local:" << partidos[i].local << ", visitante:" << partidos[i].visitante << ", salio "  << partidos[i].goles_l << '-' << partidos[i].goles_v << ", se diputo en el estadio " << partidos[i].estadio << "el partido se realizo el dia" << partidos[i].fecha.dia << ",el mes " << partidos[i].fecha.mes << ", el año" << partidos[i].fecha.año;
+        }
+    }
+    
+}
+
 int main ()
 {
     vector<equipo> torneo;
@@ -159,21 +176,20 @@ int main ()
             int opcion=0;
             cout << "elija una opcion, si quiere salir escriba 0" << endl;
             cout << "1) cargar partido"  << endl;
-            cout << "2) Cancelar cita " << endl;
+            cout << "2)mostrar_partido " << endl;
             cout << "3) Mostrar citas" << endl;
             cin >> opcion;
 
             switch (opcion)
             {
                 case 0 :
-                cargar_partido(partidos,torneo);
                     return 0;
                 break;
                 case 1 :
-                    
+                cargar_partido(partidos,torneo);
                     break;
                 case 2 :
-                    
+                mostrar_partido(partidos);
                     break;
                 case 3 :
                     
