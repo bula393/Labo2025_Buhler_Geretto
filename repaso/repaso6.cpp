@@ -13,16 +13,16 @@ struct equipo
 {
     string nombre;
     string jugadores[11];
-    int goles_f,goles_c;
-    int posicion,cant_puntos;
+    int goles_f=0,goles_c=0;
+    int cant_puntos=0;
     vector<char> historial;
 };
 
 struct partido
 {
-    string local;
-    string visitante;
-    int goles_l,goles_v;
+    equipo local;
+    equipo visitante;
+    int goles_l=0,goles_v=0;
     date fecha;
     string estadio;
 };
@@ -31,11 +31,9 @@ struct partido
 void cargar_partido(vector<partido> &partidos,vector<equipo> &torneo){
     string nombre_equipo;
     partido actual_partido;
-    string ganador="";
-    string perdedor="";
     int golesg, golesp;
-    bool empate;
     bool comprobacion=true;
+    int indicel,indicev;
     while(comprobacion){
         cout << "ingrese equipo local" << endl;
         cin >> nombre_equipo;
@@ -43,6 +41,8 @@ void cargar_partido(vector<partido> &partidos,vector<equipo> &torneo){
             if(torneo[i].nombre==nombre_equipo)
             {
                 comprobacion=false;
+                actual_partido.local=torneo[i];
+                indicel=i;
             }
         }
         if(comprobacion){
@@ -57,10 +57,13 @@ void cargar_partido(vector<partido> &partidos,vector<equipo> &torneo){
         for(int i = 0;i < torneo.size();i++){
             if(torneo[i].nombre==nombre_equipo)
             {
+
                 comprobacion=false;
+                actual_partido.visitante=torneo[i];
+                indicev=i;
             }
         }
-        if (nombre_equipo==actual_partido.local)
+        if (nombre_equipo==actual_partido.local.nombre)
         {
             comprobacion=true;
             cout << "el equipo visitante no puede ser el mismo que el local" << endl;
@@ -82,52 +85,30 @@ void cargar_partido(vector<partido> &partidos,vector<equipo> &torneo){
     cout << "ingrese año del partido " << endl;
     cin >> actual_partido.fecha.año;  
     cout << "ingrese estadio" << endl;
+    cin >> actual_partido.estadio;
+    torneo[indicel].goles_f+=actual_partido.goles_l;
+    torneo[indicel].goles_c+=actual_partido.goles_v;
+    torneo[indicev].goles_f+=actual_partido.goles_v;
+    torneo[indicev].goles_c+=actual_partido.goles_l;
     if (actual_partido.goles_l>actual_partido.goles_v)
     {
-        ganador=actual_partido.local;
-        golesg=actual_partido.goles_l;
-        perdedor=actual_partido.visitante;
-        golesp=actual_partido.goles_v;
+        torneo[indicel].cant_puntos+=3;
+        torneo[indicel].historial.push_back('V');
+        torneo[indicev].historial.push_back('D');
     }
-    else if (actual_partido.goles_l<actual_partido.goles_v)
-    {
-        ganador=actual_partido.visitante;
-        golesg=actual_partido.goles_v;
-        perdedor=actual_partido.local;
-        golesp=actual_partido.goles_l;
+    else if(actual_partido.goles_l<actual_partido.goles_v){
+        
+        torneo[indicev].cant_puntos+=3;
+        torneo[indicel].historial.push_back('D');
+        torneo[indicev].historial.push_back('V');
     }
-    if((ganador=="") and (perdedor=="")){
-        empate=true;
+    else{
+        torneo[indicel].cant_puntos+=1;
+        torneo[indicev].cant_puntos+=1;
+        torneo[indicel].historial.push_back('E');
+        torneo[indicev].historial.push_back('E');
     }
-    for(int i = 0;i < torneo.size();i++){
-        if(!empate){
-            if(torneo[i].nombre==ganador){
-                torneo[i].cant_puntos+=3;
-                torneo[i].goles_f=golesg;
-                torneo[i].goles_c=golesp;   
-                torneo[i].historial.push_back('V');
-            }
-            else if(torneo[i].nombre==perdedor){
-                torneo[i].goles_f=golesp;
-                torneo[i].goles_c=golesg;   
-                torneo[i].historial.push_back('D');
-            }
-        }
-        else{
-            if(torneo[i].nombre==actual_partido.local){
-                torneo[i].cant_puntos+=1;
-                torneo[i].goles_f=actual_partido.goles_l;
-                torneo[i].goles_c=actual_partido.goles_v;   
-                torneo[i].historial.push_back('E');
-            }
-            else if(torneo[i].nombre==actual_partido.visitante){
-                torneo[i].cant_puntos+=1;
-                torneo[i].goles_f=actual_partido.goles_v;
-                torneo[i].goles_c=actual_partido.goles_l;   
-                torneo[i].historial.push_back('E');
-            }
-        }
-    }
+
     partidos.push_back(actual_partido);
 }
 
@@ -147,6 +128,41 @@ void mostrar_partido(vector<partido> partidos){
     }
     
 }
+
+
+void tabla_posiciones(vector<equipo> &torneo){
+    
+    equipo temp;
+    cout << "---------------------------------------------------------------------" << endl;
+    cout << " Posición - Nombre del equipo - Cantidad de goles a favor - Cantidad de goles en contra - Historial de partidos" << endl;
+    cout << "---------------------------------------------------------------------" << endl;
+    for (int i = 0; i < torneo.size(); i++)
+    {
+        for (int j = i; j < torneo.size()-1; j++)
+        {
+            if(torneo[j].cant_puntos<torneo[j+1].cant_puntos){
+                temp=torneo[j];
+                torneo[j]=torneo[j+1];
+                torneo[j+1]=temp;
+                cout << i << '-' << torneo[i].nombre << '-' << torneo[i].goles_f << '-' << torneo[i].goles_c << '-' << 
+                
+                for (int k = 0; k < torneo[k].historial.size(); k++)
+                {
+                    cout << torneo[k].historial[k] << ',';
+                }
+                << endl;   
+                cout << "---------------------------------------------------------------------" << endl;
+            }
+        }
+        
+    }
+    for (int i = 0; i < torneo.size(); i++)
+    {
+        
+    }
+    
+}
+
 
 int main ()
 {
@@ -192,7 +208,7 @@ int main ()
                 mostrar_partido(partidos);
                     break;
                 case 3 :
-                    
+                    tabla_posiciones(torneo);
                     break;
                 default:
                     break;
