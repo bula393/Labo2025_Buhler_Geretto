@@ -1,8 +1,8 @@
 public class Coche {
-    String marca;
-    String modelo;
-    String color;
-    int velocidad;
+    private String marca;
+    private String modelo;
+    private String color;
+    private int velocidad;
     public Coche(String marca, String modelo, String color) {
         this.marca = marca;
         this.modelo = modelo;
