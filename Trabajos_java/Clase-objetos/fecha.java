@@ -49,7 +49,7 @@ public class fecha {
             mes = 1;
             valida = false;
         }
-        if (dia < 0 || dia > 31) {
+        if (dia < 0 || dia > this.diasMes()) {
             dia = 15;
             valida = false;
         }
@@ -60,9 +60,9 @@ public class fecha {
         }
     }
 
-    public int diasMes(int mes) {
+    public int diasMes() {
         int dias = 0;
-        switch (mes) {
+        switch (this.mes) {
             case 1:
                 dias = 31;
                 break;
@@ -109,6 +109,7 @@ public class fecha {
 
     public void larga() {
         String Mes = "";
+        String s_dia;
         switch (mes) {
             case 1:
                 Mes = "enero";
@@ -147,12 +148,13 @@ public class fecha {
                 Mes = "diciembre";
                 break;
         }
-        System.out.println("día de la semana " + dia + " de " + Mes + "de" + anio);
+
+        System.out.println("día de la semana "+ + dia + " de " + Mes + "de" + anio);
     }
 
     public void siguiente() {
         dia++;
-        if (dia > diasMes(mes)) {
+        if (dia > diasMes()) {
             mes++;
             dia = 1;
         }
@@ -166,7 +168,7 @@ public class fecha {
         dia--;
         if (dia < 1) {
             mes--;
-            dia = diasMes(mes);
+            dia = diasMes();
         }
         if (mes < 1) {
             anio--;

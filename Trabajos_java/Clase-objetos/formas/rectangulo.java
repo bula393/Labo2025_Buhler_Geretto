@@ -1,3 +1,5 @@
+package formas;
+
 public class rectangulo {
     int base;
     int altura;
