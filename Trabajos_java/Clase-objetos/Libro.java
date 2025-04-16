@@ -95,9 +95,9 @@ public class Libro {
         System.out.println("Paginas:" + paginas);
     }
 
-    public void publicado_antes(Libro libro1, Libro libro2) {
-        System.out.println(libro1.getTitulo());
-        fecha_publicacion.menorQue(libro1.getFecha_publicacion(), libro2.getFecha_publicacion());
+    public void publicado_antes( Libro libro2) {
+        System.out.println("la fecha de publicacion de " + this.getTitulo());
+        this.fecha_publicacion.menorQue(this.getFecha_publicacion(), libro2.getFecha_publicacion());
         System.out.println(libro2.getTitulo());
 
     }
@@ -117,7 +117,7 @@ public class Libro {
             libro2.mostrar(); // ✅
 
             System.out.println("\n=== Comparación de Publicación ===");
-            libro1.publicado_antes(libro1, libro2); // ✅
+            libro1.publicado_antes(libro2); // ✅
 
         }
 
