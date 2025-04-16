@@ -52,12 +52,12 @@ public class Cafetera {
         Cafetera c2 = new Cafetera(2000);
         Cafetera c3 = new Cafetera(2000,4000);
         c3.vaciarCafetera();
-        System.out.println("cantidad cafe" + c3.getCantidad_actual());
+        System.out.println("cantidad cafe:" + c3.getCantidad_actual());
         c1.llenarCafetera();
-        System.out.println("cantidad cafe" + c1.getCantidad_actual());
+        System.out.println("cantidad cafe:" + c1.getCantidad_actual());
         c2.servirTaza(200);
-        System.out.println("cantidad cafe" + c2.getCantidad_actual());
+        System.out.println("cantidad cafe:" + c2.getCantidad_actual());
         c3.agregarCafe(300);
-        System.out.println("cantidad cafe" + c3.getCantidad_actual());
+        System.out.println("cantidad cafe:" + c3.getCantidad_actual());
     }
 }

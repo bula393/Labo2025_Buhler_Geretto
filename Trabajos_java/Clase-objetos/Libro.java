@@ -26,15 +26,13 @@ public class Libro {
     }
 
     public Libro() {
+        persona Autor = new persona("jj rowling",68,"inlaterra");
         titulo = "harry potter";
-        autor.setNombre("jj rowling");
-        autor.setEdad(68);
-        autor.setDireccion("inlaterra");
+        autor = Autor;
         ISBN = 1000005;
         editorial = "enland_potter";
-        fecha_publicacion.setAnio(1985);
-        fecha_publicacion.setMes(8);
-        fecha_publicacion.setDia(25);
+        fecha f1 = new fecha(25,8,1985);
+        fecha_publicacion = f1;
         paginas = 653;
     }
 
