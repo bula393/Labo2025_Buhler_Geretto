@@ -110,6 +110,27 @@ public class fecha {
     public void larga() {
         String Mes = "";
         String s_dia;
+        if(dia==1||dia==8||dia==15||dia==22||dia==29){
+            s_dia="lunes";
+        }
+        else if(dia==2||dia==9||dia==16||dia==23||dia==30){
+            s_dia="martes";
+        }
+        else if(dia==3||dia==10||dia==17||dia==24||dia==31){
+            s_dia="miercoles";
+        }
+        else if(dia==4||dia==11||dia==18||dia==25){
+            s_dia="jueves";
+        }
+        else if(dia==5||dia==12||dia==19||dia==26){
+            s_dia="viernes";
+        }
+        else if(dia==6||dia==13||dia==20||dia==27){
+            s_dia="sabado";
+        }
+        else if(dia==7||dia==14||dia==21||dia==28){
+            s_dia="sabado";
+        }
         switch (mes) {
             case 1:
                 Mes = "enero";
