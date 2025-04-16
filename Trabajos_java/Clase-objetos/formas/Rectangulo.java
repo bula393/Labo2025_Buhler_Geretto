@@ -1,10 +1,10 @@
 package formas;
 
-public class rectangulo {
+public class Rectangulo {
     int base;
     int altura;
 
-    public rectangulo(int BASE, int ALTURA) {
+    public Rectangulo(int BASE, int ALTURA) {
         this.base = BASE;
         this.altura = ALTURA;
     }
@@ -28,8 +28,8 @@ public class rectangulo {
     }
 
     public static void main(String[] args) {
-        rectangulo r1 = new rectangulo(4, 5);
-        rectangulo r2 = new rectangulo(4, 6);
+        Rectangulo r1 = new Rectangulo(4, 5);
+        Rectangulo r2 = new Rectangulo(4, 6);
         System.out.println("Base:" + r1.getBase());
         System.out.println("Altura" + r1.getAltura());
         r2.setAltura(10);

@@ -1,12 +1,12 @@
 public class Cancion {
     String titulo;
-    persona autor;
+    Persona autor;
 
-    public persona getAutor() {
+    public Persona getAutor() {
         return autor;
     }
 
-    public void setAutor(persona autor) {
+    public void setAutor(Persona autor) {
         this.autor = autor;
     }
 
@@ -22,14 +22,14 @@ public class Cancion {
         autor.setNombre("");
         autor.setDireccion("");;
     }
-    public Cancion(String titulo, persona autor) {
+    public Cancion(String titulo, Persona autor) {
         this.titulo = titulo;
         this.autor = autor;
     }
 
     public static void main(String[] args) {
         Cancion c1 = new Cancion();
-        persona autor1 = new persona("Ceratti",95,"Argentina");
+        Persona autor1 = new Persona("Ceratti",95,"Argentina");
         Cancion c2 = new Cancion("adios",autor1);
     }
 }

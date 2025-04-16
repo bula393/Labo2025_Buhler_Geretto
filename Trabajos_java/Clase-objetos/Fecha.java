@@ -1,15 +1,15 @@
-public class fecha {
+public class Fecha {
     private int dia;
     private int mes;
     private int anio;
 
-    public fecha(int DIA, int MES, int ANIO) {
+    public Fecha(int DIA, int MES, int ANIO) {
         dia = DIA;
         mes = MES;
         anio = ANIO;
     }
 
-    public fecha() {
+    public Fecha() {
         dia = 1;
         mes = 1;
         anio = 2000;
@@ -197,7 +197,7 @@ public class fecha {
         }
     }
 
-    public void igualQue(fecha fecha1, fecha fecha2) {
+    public void igualQue(Fecha fecha1, Fecha fecha2) {
         if ((fecha1.getDía() == fecha2.getDía()) && (fecha1.getMES() == fecha2.getMES()) && (fecha1.getAnio() == fecha2.getAnio())) {
             System.out.println("son iguales");
         } else {
@@ -206,7 +206,7 @@ public class fecha {
 
     }
 
-    public void menorQue(fecha fecha1, fecha fecha2) {
+    public void menorQue(Fecha fecha1, Fecha fecha2) {
 
         boolean menor = false;
         if (fecha1.getAnio() < fecha2.getAnio()) {
@@ -225,7 +225,7 @@ public class fecha {
 
     }
 
-    public void mayorQue(fecha fecha1, fecha fecha2) {
+    public void mayorQue(Fecha fecha1, Fecha fecha2) {
 
         boolean mayor = false;
         if (fecha1.getAnio() > fecha2.getAnio()) {
@@ -245,9 +245,9 @@ public class fecha {
     }
 
     public static void main(String[] args) {
-        fecha fecha1 = new fecha(15, 5, 2023);
-        fecha fecha2 = new fecha(12, 8, 2022);
-        fecha fecha3 = new fecha(15, 5, 2023);
+        Fecha fecha1 = new Fecha(15, 5, 2023);
+        Fecha fecha2 = new Fecha(12, 8, 2022);
+        Fecha fecha3 = new Fecha(15, 5, 2023);
 
         fecha1.valida();
         fecha2.valida();

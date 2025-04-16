@@ -1,13 +1,13 @@
 public class Libro {
     private String titulo;
-    private persona autor;
+    private Persona autor;
     private int ISBN;
     private String editorial;
-    private fecha fecha_publicacion;
+    private Fecha fecha_publicacion;
     private int paginas;
 
 
-    public Libro(String Titulo, persona Autor, int iSBN, String Editorial, fecha Fecha_publicacion, int Paginas) {
+    public Libro(String Titulo, Persona Autor, int iSBN, String Editorial, Fecha Fecha_publicacion, int Paginas) {
         titulo = Titulo;
         autor = Autor;
         ISBN = iSBN;
@@ -16,7 +16,7 @@ public class Libro {
         paginas = Paginas;
     }
 
-    public Libro(String Titulo, persona Autor, int iSBN, fecha Fecha_publicacion, int Paginas) {
+    public Libro(String Titulo, Persona Autor, int iSBN, Fecha Fecha_publicacion, int Paginas) {
         titulo = Titulo;
         autor = Autor;
         ISBN = iSBN;
@@ -26,12 +26,12 @@ public class Libro {
     }
 
     public Libro() {
-        persona Autor = new persona("jj rowling",68,"inlaterra");
+        Persona Autor = new Persona("jj rowling",68,"inlaterra");
         titulo = "harry potter";
         autor = Autor;
         ISBN = 1000005;
         editorial = "enland_potter";
-        fecha f1 = new fecha(25,8,1985);
+        Fecha f1 = new Fecha(25,8,1985);
         fecha_publicacion = f1;
         paginas = 653;
     }
@@ -44,7 +44,7 @@ public class Libro {
         return titulo;
     }
 
-    public persona getAutor() {
+    public Persona getAutor() {
         return autor;
     }
 
@@ -52,7 +52,7 @@ public class Libro {
         return ISBN;
     }
 
-    public fecha getFecha_publicacion() {
+    public Fecha getFecha_publicacion() {
         return fecha_publicacion;
     }
 
@@ -64,11 +64,11 @@ public class Libro {
         this.paginas = paginas;
     }
 
-    public void setFecha_publicacion(fecha fecha_publicacion) {
+    public void setFecha_publicacion(Fecha fecha_publicacion) {
         this.fecha_publicacion = fecha_publicacion;
     }
 
-    public void setAutor(persona autor) {
+    public void setAutor(Persona autor) {
         this.autor = autor;
     }
 
@@ -104,8 +104,8 @@ public class Libro {
 
 
     public static void main(String[] args) {
-            persona autor1 = new persona("Gabriel García Márquez", 87, "Colombia");
-            fecha fecha1 = new fecha(1967, 5, 30);
+            Persona autor1 = new Persona("Gabriel García Márquez", 87, "Colombia");
+            Fecha fecha1 = new Fecha(1967, 5, 30);
 
 
             Libro libro1 = new Libro("Cien Años de Soledad", autor1, 123456, "Sudamericana", fecha1, 417);

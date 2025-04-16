@@ -1,9 +1,9 @@
-public class persona {
+public class Persona {
     String nombre;
     int edad;
     String direccion;
 
-    public persona(String Nombre,int Edad,String Direccion){
+    public Persona(String Nombre, int Edad, String Direccion){
         this.nombre=Nombre;
         this.edad=Edad;
         this.direccion=Direccion;
@@ -22,7 +22,7 @@ public class persona {
     }
 
     public static void main(String[] args) {
-        persona p1 = new persona("pipe",17,"villa urquiza");
+        Persona p1 = new Persona("pipe",17,"villa urquiza");
         p1.mostrar_datos();
     }
 

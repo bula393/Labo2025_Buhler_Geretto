@@ -1,13 +1,13 @@
 package formas;
 
-public class circulo {
+public class Circulo {
     private float radio;
 
 
-    public circulo() {
+    public Circulo() {
         this.radio = 2;
     }
-    public circulo(float RADIO) {
+    public Circulo(float RADIO) {
         this.radio = RADIO;
     }
     public float getRadio() {
@@ -23,8 +23,8 @@ public class circulo {
         return (float) (2 * this.radio * 3.14);
     }
     public static void main(String[] args) {
-        circulo c1 = new circulo();
-        circulo c2 = new circulo(4);
+        Circulo c1 = new Circulo();
+        Circulo c2 = new Circulo(4);
         System.out.println("radio:" + c1.getRadio());
         c2.setRadio(10);
         System.out.println("Area:" + c1.area());;
