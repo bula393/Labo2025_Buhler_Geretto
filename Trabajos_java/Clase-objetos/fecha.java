@@ -109,7 +109,7 @@ public class fecha {
 
     public void larga() {
         String Mes = "";
-        String s_dia;
+        String s_dia = "";
         if(dia==1||dia==8||dia==15||dia==22||dia==29){
             s_dia="lunes";
         }
@@ -170,7 +170,7 @@ public class fecha {
                 break;
         }
 
-        System.out.println("día de la semana "+ + dia + " de " + Mes + "de" + anio);
+        System.out.println("día de la semana "+ s_dia + dia + " de " + Mes + "de" + anio);
     }
 
     public void siguiente() {
