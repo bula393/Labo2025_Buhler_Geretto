@@ -19,8 +19,7 @@ public class Cancion {
     }
     public Cancion(){
         this.titulo = "";
-        autor.setNombre("");
-        autor.setDireccion("");;
+        autor = new Persona("",0,"");
     }
     public Cancion(String titulo, Persona autor) {
         this.titulo = titulo;
