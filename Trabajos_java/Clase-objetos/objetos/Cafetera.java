@@ -1,3 +1,5 @@
+package objetos;
+
 public class Cafetera {
     int cantidad_maxima;
     int cantidad_actual;

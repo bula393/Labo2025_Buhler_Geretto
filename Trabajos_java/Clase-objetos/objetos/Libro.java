@@ -1,3 +1,8 @@
+package objetos;
+
+import random.Fecha;
+import random.Persona;
+
 public class Libro {
     private String titulo;
     private Persona autor;
@@ -111,9 +116,9 @@ public class Libro {
             Libro libro1 = new Libro("Cien Años de Soledad", autor1, 123456, "Sudamericana", fecha1, 417);
             Libro libro2 = new Libro();
 
-            System.out.println("=== Libro 1 ===");
+            System.out.println("=== objetos.Libro 1 ===");
             libro1.mostrar(); // ✅
-            System.out.println("\n=== Libro 2 ===");
+            System.out.println("\n=== objetos.Libro 2 ===");
             libro2.mostrar(); // ✅
 
             System.out.println("\n=== Comparación de Publicación ===");

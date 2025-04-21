@@ -1,3 +1,5 @@
+package random;
+
 public class Persona {
     String nombre;
     int edad;

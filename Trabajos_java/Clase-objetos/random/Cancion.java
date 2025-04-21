@@ -1,3 +1,5 @@
+package random;
+
 public class Cancion {
     String titulo;
     Persona autor;
@@ -24,6 +26,11 @@ public class Cancion {
     public Cancion(String titulo, Persona autor) {
         this.titulo = titulo;
         this.autor = autor;
+    }
+
+    public void mostrar(){
+        System.out.println("titulo: " + this.titulo);
+        this.autor.mostrar_datos();
     }
 
     public static void main(String[] args) {
