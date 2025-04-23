@@ -1,19 +1,31 @@
-import random.Fecha;
 import random.Persona;
 
+import java.time.LocalDate;
+import java.time.chrono.ChronoLocalDate;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Alumno {
     String nombre;
     String apellido;
-    Fecha fecha_nacimiento;
+    LocalDate fecha_nacimiento;
     ArrayList<Nota> lista_notas;
+    ArrayList<Materia> lista_materia;
 
-    public Alumno(String nombre, String apellido, Fecha fecha_nacimiento) {
+    public Alumno(String nombre, String apellido, LocalDate fecha_nacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fecha_nacimiento = fecha_nacimiento;
         this.lista_notas = new ArrayList<Nota>();
+        this.lista_materia = new ArrayList<Materia>();
+    }
+
+    public ArrayList<Materia> getLista_materia() {
+        return lista_materia;
+    }
+
+    public void setLista_materia(ArrayList<Materia> lista_materia) {
+        this.lista_materia = lista_materia;
     }
 
     public String getNombre() {
@@ -32,11 +44,11 @@ public class Alumno {
         this.apellido = apellido;
     }
 
-    public Fecha getFecha_nacimiento() {
+    public LocalDate getfecha_nacimiento() {
         return fecha_nacimiento;
     }
 
-    public void setFecha_nacimiento(Fecha fecha_nacimiento) {
+    public void setfecha_nacimiento(LocalDate fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
@@ -46,6 +58,34 @@ public class Alumno {
 
     public void setLista_notas(ArrayList<Nota> lista_notas) {
         this.lista_notas = lista_notas;
+    }
+
+    public void agregarMateria(ArrayList<Materia> materias){
+        Scanner x = new Scanner(System.in);
+        int i = 0;
+        System.out.println("Ingrese una materia para agregarse");
+        Materia materiaAgregar = new Materia(x.nextLine());
+        for (Materia materia :  materias){
+            if (materiaAgregar.getNombre() == materia.getNombre()){
+                materiaAgregar = materia;
+                materias.get(i).añadirAlumno(this);
+                this.lista_materia.add(materiaAgregar);
+            }
+            i++;
+        }
+
+    }
+    public int calculaEdad(){
+        LocalDate actual = LocalDate.now() ;
+        int edad = actual.getYear() - this.fecha_nacimiento.getYear();
+        if (this.fecha_nacimiento.getMonthValue() > actual.getMonthValue()) {
+            edad--;
+        }
+        else if (this.fecha_nacimiento.getMonthValue() == actual.getMonthValue()  &  this.fecha_nacimiento.getDayOfMonth() > actual.getDayOfMonth())
+        {
+            edad --;
+        }
+        return edad;
     }
 
     public void agregarNota(Nota nota){
@@ -71,7 +111,8 @@ public class Alumno {
     }
 
     public static void main(String[] args) {
-        Alumno alumno = new Alumno("santino", "geretto",new Fecha(25,5,2008));
+        LocalDate fecha = LocalDate.of(2007,5,25);
+        Alumno alumno = new Alumno("santino", "geretto",fecha);
         alumno.agregarNota(new Nota(8,"matematica"));
         alumno.agregarNota(new Nota(9,"matematica"));
         alumno.agregarNota(new Nota(2,"orga"));
