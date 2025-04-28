@@ -25,7 +25,7 @@ public class Jugador {
 
 
 
-    public Jugador(String nombre, LocalDate fecha_nacimiento, String disponibilidad_horaria) {
+    public Jugador(String nombre, LocalDate fecha_nacimiento) {
         this.nombre = nombre;
         this.fecha_nacimiento = fecha_nacimiento;
     }
