@@ -1,4 +1,4 @@
-package random;
+package personas;
 
 public class Persona {
     String nombre;

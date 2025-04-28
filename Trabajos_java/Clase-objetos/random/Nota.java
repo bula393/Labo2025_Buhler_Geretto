@@ -1,3 +1,5 @@
+package random;
+
 public class Nota {
     int puntuacion;
     String materia;

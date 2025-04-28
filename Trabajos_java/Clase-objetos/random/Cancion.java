@@ -1,5 +1,7 @@
 package random;
 
+import personas.Persona;
+
 public class Cancion {
     String titulo;
     Persona autor;

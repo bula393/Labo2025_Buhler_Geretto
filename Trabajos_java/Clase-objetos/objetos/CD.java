@@ -1,7 +1,7 @@
 package objetos;
 
 import random.Cancion;
-import random.Persona;
+import personas.Persona;
 
 import java.util.ArrayList;
 

@@ -1,7 +1,7 @@
 package objetos;
 
 import random.Fecha;
-import random.Persona;
+import personas.Persona;
 
 public class Libro {
     private String titulo;

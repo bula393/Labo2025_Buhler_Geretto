@@ -1,7 +1,8 @@
-import random.Persona;
+package personas;
+import random.Materia;
+import random.Nota;
 
 import java.time.LocalDate;
-import java.time.chrono.ChronoLocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -62,16 +63,16 @@ public class Alumno {
 
     public void agregarMateria(ArrayList<Materia> materias){
         Scanner x = new Scanner(System.in);
-        int i = 0;
         System.out.println("Ingrese una materia para agregarse");
         Materia materiaAgregar = new Materia(x.nextLine());
-        for (Materia materia :  materias){
-            if (materiaAgregar.getNombre() == materia.getNombre()){
-                materiaAgregar = materia;
-                materias.get(i).añadirAlumno(this);
+        for (int j = 0; j < materias.size(); j++)
+
+        {
+            if (materiaAgregar.getNombre().equals(materias.get(j).getNombre())){
+                materiaAgregar = materias.get(j);
+                materias.get(j).añadirAlumno(this);
                 this.lista_materia.add(materiaAgregar);
             }
-            i++;
         }
 
     }
@@ -110,15 +111,50 @@ public class Alumno {
         return mayor;
     }
 
-    public static void main(String[] args) {
-        LocalDate fecha = LocalDate.of(2007,5,25);
-        Alumno alumno = new Alumno("santino", "geretto",fecha);
-        alumno.agregarNota(new Nota(8,"matematica"));
-        alumno.agregarNota(new Nota(9,"matematica"));
-        alumno.agregarNota(new Nota(2,"orga"));
-        alumno.agregarNota(new Nota(6,"lengua"));
-        System.out.println("mayor nota:" + alumno.mayorNota());
-        System.out.println("menor nota:" + alumno.menorNota());
 
+        public static void main(String[] args) {
+            ArrayList<Materia> materias = new ArrayList<Materia>();
+            materias.add(new Materia("matematica"));
+            materias.add(new Materia("lengua"));
+            materias.add(new Materia("ingles"));
+
+            ArrayList<Nota> notas = new ArrayList<Nota>();
+            notas.add(new Nota(10,"ingles"));
+            notas.add(new Nota(6,"ingles"));
+            notas.add(new Nota(2,"ingles"));
+
+            ArrayList<Nota> notas2 = new ArrayList<Nota>();
+            notas.add(new Nota(7,"ingles"));
+            notas.add(new Nota(6,"ingles"));
+            notas.add(new Nota(3,"ingles"));
+
+            ArrayList<Nota> notas3 = new ArrayList<Nota>();
+            notas.add(new Nota(8,"ingles"));
+            notas.add(new Nota(1,"ingles"));
+            notas.add(new Nota(5,"ingles"));
+
+            Alumno a1 = new Alumno("santi","buhler", LocalDate.of(2008,05,30));
+            Alumno a2 = new Alumno("facu","buhler", LocalDate.of(2010,02,20));
+            Alumno a3 = new Alumno("nico","orniero", LocalDate.of(2005,03,10));
+
+            a1.setLista_notas(notas);
+            a2.setLista_notas(notas2);
+            a3.setLista_notas(notas3);
+
+            a1.agregarMateria(materias);
+            a1.agregarMateria(materias);
+            a2.agregarMateria(materias);
+            a3.agregarMateria(materias);
+            System.out.println("--------------------------------");
+            System.out.println("lista de materias de a1:");
+            for (Materia materia : a1.getLista_materia()){
+                System.out.print(materia.getNombre()+',');
+            }
+            System.out.println("--------------------------------");
+            System.out.println("promedio de edades " + materias.get(2).promedioEdadAlumnos());
+            System.out.println("promedio de notas " + materias.get(2).promedioNotasAlumnos());
+
+
+        }
     }
-}
+
