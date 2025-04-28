@@ -1,21 +1,32 @@
-import personas.Jugador;
-
 import java.time.LocalDate;
-import java.util.jar.JarEntry;
 
 public class Partido {
-    String equipo;
+    Equipo local;
+    Equipo visitante;
     LocalDate fecha;
-    String barrio;
-    Jugador[] jugadores_equipo = new Jugador[11] ;
-    String disponibilidad;
+    String turno;
 
-    public String getEquipo() {
-        return equipo;
+    public Partido(Equipo local, Equipo visitante, LocalDate fecha, String turno) {
+        this.local = local;
+        this.visitante = visitante;
+        this.fecha = fecha;
+        this.turno = turno;
     }
 
-    public void setEquipo(String equipo) {
-        this.equipo = equipo;
+    public Equipo getLocal() {
+        return local;
+    }
+
+    public void setLocal(Equipo local) {
+        this.local = local;
+    }
+
+    public Equipo getVisitante() {
+        return visitante;
+    }
+
+    public void setVisitante(Equipo visitante) {
+        this.visitante = visitante;
     }
 
     public LocalDate getFecha() {
@@ -26,35 +37,11 @@ public class Partido {
         this.fecha = fecha;
     }
 
-    public String getBarrio() {
-        return barrio;
+    public String getTurno() {
+        return turno;
     }
 
-    public void setBarrio(String barrio) {
-        this.barrio = barrio;
-    }
-
-    public Jugador[] getJugadores_equipo() {
-        return jugadores_equipo;
-    }
-
-    public void setJugadores_equipo(Jugador[] jugadores_equipo) {
-        this.jugadores_equipo = jugadores_equipo;
-    }
-
-    public String getDisponibilidad() {
-        return disponibilidad;
-    }
-
-    public void setDisponibilidad(String disponibilidad) {
-        this.disponibilidad = disponibilidad;
-    }
-
-    public Partido(String equipo, LocalDate fecha, String barrio, Jugador[] jugadores_equipo, String disponibilidad) {
-        this.equipo = equipo;
-        this.fecha = fecha;
-        this.barrio = barrio;
-        this.jugadores_equipo = jugadores_equipo;
-        this.disponibilidad = disponibilidad;
+    public void setTurno(String turno) {
+        this.turno = turno;
     }
 }

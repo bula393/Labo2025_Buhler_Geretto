@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Jugador {
     String nombre;
     LocalDate fecha_nacimiento;
-    String disponibilidad_horaria;
+    int numero_remera;
 
     public String getNombre() {
         return nombre;
@@ -23,17 +23,11 @@ public class Jugador {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
-    public String getDisponibilidad_horaria() {
-        return disponibilidad_horaria;
-    }
 
-    public void setDisponibilidad_horaria(String disponibilidad_horaria) {
-        this.disponibilidad_horaria = disponibilidad_horaria;
-    }
 
     public Jugador(String nombre, LocalDate fecha_nacimiento, String disponibilidad_horaria) {
         this.nombre = nombre;
         this.fecha_nacimiento = fecha_nacimiento;
-        this.disponibilidad_horaria = disponibilidad_horaria;
     }
+
 }
