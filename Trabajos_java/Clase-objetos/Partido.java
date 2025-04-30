@@ -13,6 +13,7 @@ public class Partido {
         this.turno = turno;
     }
 
+
     public Equipo getLocal() {
         return local;
     }
@@ -43,5 +44,8 @@ public class Partido {
 
     public void setTurno(String turno) {
         this.turno = turno;
+    }
+    public void mostrarPartido(){
+        System.out.println(this.local + "-" + this.visitante );
     }
 }

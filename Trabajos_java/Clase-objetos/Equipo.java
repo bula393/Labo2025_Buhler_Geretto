@@ -1,5 +1,5 @@
 import personas.Jugador;
-
+import java.util.Random;
 import java.time.LocalDate;
 
 public class Equipo {
@@ -56,7 +56,7 @@ public class Equipo {
         this.inicializo_jugadores();
         this.disponibilidad = disponibilidad;
     }
-    void inicializo_jugadores(){
+    public void inicializo_jugadores(){
         jugadores_equipo[0] = new Jugador("Lionel Messi", LocalDate.of(1987, 6, 24));
         jugadores_equipo[1] = new Jugador("Ángel Di María", LocalDate.of(1988, 3, 22));
         jugadores_equipo[2] = new Jugador("Kylian Mbappé", LocalDate.of(1998, 12, 20));
@@ -70,5 +70,23 @@ public class Equipo {
         jugadores_equipo[10] = new Jugador("Vinícius Júnior", LocalDate.of(2000, 7, 12));
 
     }
-
+    public void asignarNumeroCamiseta(Jugador Jugador){
+        int numero;
+        boolean verificacion = true;
+        Random aleatorio =new Random();
+        int indice_jugador = 22;
+        numero = aleatorio.nextInt(100) + 1;
+        while (verificacion){
+            verificacion = false;
+            for (int i = 0; i < 11; i++) {
+                if (this.jugadores_equipo[i].getNumero_remera() == numero){
+                    verificacion = true;
+                    indice_jugador = i;
+                }
+            }
+            if (!verificacion & indice_jugador != 22){
+                this.jugadores_equipo[indice_jugador].setNumero_remera(numero);
+            }
+        }
+    }
 }

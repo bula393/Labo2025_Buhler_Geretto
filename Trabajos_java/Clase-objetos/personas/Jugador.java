@@ -23,7 +23,13 @@ public class Jugador {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
+    public int getNumero_remera() {
+        return numero_remera;
+    }
 
+    public void setNumero_remera(int numero_remera) {
+        this.numero_remera = numero_remera;
+    }
 
     public Jugador(String nombre, LocalDate fecha_nacimiento) {
         this.nombre = nombre;
