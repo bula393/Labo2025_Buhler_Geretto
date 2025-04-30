@@ -46,6 +46,6 @@ public class Partido {
         this.turno = turno;
     }
     public void mostrarPartido(){
-        System.out.println(this.local + "-" + this.visitante );
+        System.out.println(this.local.getNombre() + "-" + this.visitante.getNombre() );
     }
 }
