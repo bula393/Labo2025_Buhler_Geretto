@@ -2,10 +2,9 @@ package personas;
 
 import java.time.LocalDate;
 
-public class Jugador {
-    String nombre;
-    LocalDate fecha_nacimiento;
-    int numero_remera;
+public class Jugador extends Persona {
+
+    private int numero_remera;
 
     public String getNombre() {
         return nombre;
@@ -32,8 +31,7 @@ public class Jugador {
     }
 
     public Jugador(String nombre, LocalDate fecha_nacimiento) {
-        this.nombre = nombre;
-        this.fecha_nacimiento = fecha_nacimiento;
+        super(nombre,fecha_nacimiento);
     }
 
 }

@@ -3,6 +3,7 @@ package objetos;
 import random.Cancion;
 import personas.Persona;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class CD {
@@ -11,10 +12,10 @@ public class CD {
 
     public CD() {
         this.albun = new ArrayList<Cancion>();
-        this.albun.add(new Cancion("como ali",new Persona("ciro",60,"libertador")));
-        this.albun.add(new Cancion("san jauleche",new Persona("ciro",60,"libertador")));
-        this.albun.add(new Cancion("tan solo",new Persona("ciro",60,"libertador")));
-        this.albun.add(new Cancion("globalizacion",new Persona("ciro",60,"libertador")));
+        this.albun.add(new Cancion("como ali",new Persona("ciro","libertador", LocalDate.now())));
+        this.albun.add(new Cancion("san jauleche",new Persona("ciro","libertador", LocalDate.now())));
+        this.albun.add(new Cancion("tan solo",new Persona("ciro","libertador", LocalDate.now())));
+        this.albun.add(new Cancion("globalizacion",new Persona("ciro","libertador", LocalDate.now())));
     }
 
     public ArrayList<Cancion> getAlbun() {
@@ -60,7 +61,7 @@ public class CD {
         System.out.println("Grabado:");
         cd.mostrar();
         System.out.println("agregado:");
-        cd.agrega(new Cancion("farolito",new Persona("ciro",60,"libertador")));
+        cd.agrega(new Cancion("farolito",new Persona("ciro","libertador", LocalDate.now())));
         cd.mostrar();
         cd.elimina(1);
         System.out.println("eliminado:");

@@ -1,5 +1,6 @@
 import personas.Persona;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Array1 {
@@ -20,10 +21,11 @@ public class Array1 {
         palabras.add("Chica");
         palabras.add("Foxy");
 
-        personas.add(new Persona ("Freddy Fazbear",35,"Samudio 4080"));
-        personas.add(new Persona ("Chica the Chicken",9,"Samudio 4080"));
-        personas.add(new Persona ("Bonnie the Bunny",50,"Samudio 4080"));
-        personas.add(new Persona ("Foxy the Pirate",19,"Samudio 4080"));
+        personas.add(new Persona ("Freddy Fazbear","35", LocalDate.now()));
+        personas.add(new Persona ("Freddy Fazbear","35", LocalDate.now()));
+        personas.add(new Persona ("Freddy Fazbear","35", LocalDate.now()));
+        personas.add(new Persona ("Freddy Fazbear","35", LocalDate.now()));
+
 
 
         System.out.println("Palabras que empiezan con '" + letra + "':");
@@ -40,7 +42,7 @@ public class Array1 {
         System.out.println("Resultado: " + resultado);
 
         for (Persona persona : personas){
-            if (persona.getEdad()>30){
+            if (persona.calculaEdad()>30){
                 persona.mostrar_datos();
             }
         }

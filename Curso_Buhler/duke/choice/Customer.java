@@ -64,7 +64,7 @@ public class Customer {
     public void additem(Clothing c) {
         this.ropas.add(c);
     }
-    public void remove(int index) {
+    public void removeitem(int index) {
         this.ropas.remove(index);
     }
     public void setName(String name) {

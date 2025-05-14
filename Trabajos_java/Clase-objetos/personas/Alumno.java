@@ -6,17 +6,12 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Alumno {
-    String nombre;
-    String apellido;
-    LocalDate fecha_nacimiento;
+public class Alumno extends Persona {
     ArrayList<Nota> lista_notas;
     ArrayList<Materia> lista_materia;
 
     public Alumno(String nombre, String apellido, LocalDate fecha_nacimiento) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.fecha_nacimiento = fecha_nacimiento;
+        super(nombre,apellido,fecha_nacimiento);
         this.lista_notas = new ArrayList<Nota>();
         this.lista_materia = new ArrayList<Materia>();
     }
@@ -27,30 +22,6 @@ public class Alumno {
 
     public void setLista_materia(ArrayList<Materia> lista_materia) {
         this.lista_materia = lista_materia;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public LocalDate getfecha_nacimiento() {
-        return fecha_nacimiento;
-    }
-
-    public void setfecha_nacimiento(LocalDate fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
     }
 
     public ArrayList<Nota> getLista_notas() {
@@ -76,18 +47,7 @@ public class Alumno {
         }
 
     }
-    public int calculaEdad(){
-        LocalDate actual = LocalDate.now() ;
-        int edad = actual.getYear() - this.fecha_nacimiento.getYear();
-        if (this.fecha_nacimiento.getMonthValue() > actual.getMonthValue()) {
-            edad--;
-        }
-        else if (this.fecha_nacimiento.getMonthValue() == actual.getMonthValue()  &  this.fecha_nacimiento.getDayOfMonth() > actual.getDayOfMonth())
-        {
-            edad --;
-        }
-        return edad;
-    }
+
 
     public void agregarNota(Nota nota){
         this.lista_notas.add(nota);

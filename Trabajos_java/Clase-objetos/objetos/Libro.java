@@ -3,6 +3,8 @@ package objetos;
 import random.Fecha;
 import personas.Persona;
 
+import java.time.LocalDate;
+
 public class Libro {
     private String titulo;
     private Persona autor;
@@ -31,7 +33,7 @@ public class Libro {
     }
 
     public Libro() {
-        Persona Autor = new Persona("jj rowling",68,"inlaterra");
+        Persona Autor = new Persona("jj rowling","inlaterra", LocalDate.now());
         titulo = "harry potter";
         autor = Autor;
         ISBN = 1000005;
@@ -109,7 +111,7 @@ public class Libro {
 
 
     public static void main(String[] args) {
-            Persona autor1 = new Persona("Gabriel García Márquez", 87, "Colombia");
+            Persona autor1 = new Persona("Gabriel García Márquez",  "Colombia", LocalDate.now());
             Fecha fecha1 = new Fecha(1967, 5, 30);
 
 

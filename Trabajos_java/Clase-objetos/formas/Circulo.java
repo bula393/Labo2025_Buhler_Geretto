@@ -1,6 +1,6 @@
 package formas;
 
-public class Circulo {
+public class Circulo extends Figura{
     private float radio;
 
 

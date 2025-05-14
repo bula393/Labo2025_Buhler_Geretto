@@ -55,7 +55,7 @@ public class Materia {
         double promedio = 0;
         int i = 0;
         for (Alumno alumno : this.getAlumnosInscriptos()){
-            promedio+=alumno.calculaEdad();
+            promedio+=alumno.ca;
             i++;
         }
         return promedio/i;

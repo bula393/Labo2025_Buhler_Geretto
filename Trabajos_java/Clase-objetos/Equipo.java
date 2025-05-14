@@ -55,6 +55,7 @@ public class Equipo {
         this.barrio = barrio;
         this.inicializo_jugadores();
         this.disponibilidad = disponibilidad;
+        LocalDate t = fecha;
     }
     public void inicializo_jugadores(){
         jugadores_equipo[0] = new Jugador("Lionel Messi", LocalDate.of(1987, 6, 24));

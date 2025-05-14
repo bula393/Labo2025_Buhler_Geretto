@@ -2,6 +2,8 @@ package random;
 
 import personas.Persona;
 
+import java.time.LocalDate;
+
 public class Cancion {
     String titulo;
     Persona autor;
@@ -23,7 +25,7 @@ public class Cancion {
     }
     public Cancion(){
         this.titulo = "";
-        autor = new Persona("",0,"");
+        autor = new Persona("","", LocalDate.now());
     }
     public Cancion(String titulo, Persona autor) {
         this.titulo = titulo;
@@ -37,7 +39,7 @@ public class Cancion {
 
     public static void main(String[] args) {
         Cancion c1 = new Cancion();
-        Persona autor1 = new Persona("Ceratti",95,"Argentina");
+        Persona autor1 = new Persona("Ceratti","Argentina", LocalDate.now());
         Cancion c2 = new Cancion("adios",autor1);
     }
 }

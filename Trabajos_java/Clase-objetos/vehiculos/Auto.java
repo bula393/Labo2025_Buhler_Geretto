@@ -1,0 +1,18 @@
+package vehiculos;
+
+public class Auto extends VehiculoMotor{
+    private boolean descapotable;
+
+    public Auto(String marca, String modelo, String color, int cantidad_ruedad, int año_fabricacion, String patente, boolean descapotable) {
+        super(marca, modelo, color, cantidad_ruedad, año_fabricacion, patente);
+        this.descapotable = descapotable;
+    }
+
+    public boolean isDescapotable() {
+        return descapotable;
+    }
+
+    public void setDescapotable(boolean descapotable) {
+        this.descapotable = descapotable;
+    }
+}
