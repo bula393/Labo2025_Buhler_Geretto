@@ -8,11 +8,12 @@ public class Auto extends VehiculoMotor{
         this.descapotable = descapotable;
     }
 
-    public boolean isDescapotable() {
+    public boolean getDescapotable() {
         return descapotable;
     }
 
     public void setDescapotable(boolean descapotable) {
         this.descapotable = descapotable;
     }
+
 }
