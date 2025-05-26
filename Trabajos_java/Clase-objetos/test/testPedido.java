@@ -10,7 +10,9 @@ import sistemas.Sistema_pedido;
 import java.util.ArrayList;
 
 public class testPedido {
-@Test
+
+
+    @Test
     public void testAddPlato(){
         Pedido p1 = new Pedido();
         Plato plato = new Plato();
@@ -34,4 +36,5 @@ public class testPedido {
         Plato plato = new Plato();
         p1.addPlato(plato);
     }
+
 }
