@@ -9,8 +9,8 @@ public class Periferico extends Dispocitivo {
     }
 
     public Periferico() {
-        puerto = 2;
         super("red dragon","af 5",20.5,5);
+        puerto = 2;
     }
 
     public int getPuerto() {
