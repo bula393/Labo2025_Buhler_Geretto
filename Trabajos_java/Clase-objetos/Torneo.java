@@ -1,3 +1,5 @@
+import enums.Turno;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -67,17 +69,17 @@ public class Torneo {
 
          for (int i = 0; i < equipos_tarde.size(); i++) {
              for (int j = i; j < equipos_tarde.size(); j++) {
-                 this.partidos.add(new Partido(equipos_tarde.get(i),equipos_tarde.get(j),LocalDate.now(),"tarde"));
+                 this.partidos.add(new Partido(equipos_tarde.get(i),equipos_tarde.get(j),LocalDate.now(), Turno.TARDE));
              }
          }
          for (int i = 0; i < equipos_noche.size(); i++) {
              for (int j = i; j < equipos_noche.size(); j++) {
-                 this.partidos.add(new Partido(equipos_noche.get(i),equipos_noche.get(j),LocalDate.now(),"noche"));
+                 this.partidos.add(new Partido(equipos_noche.get(i),equipos_noche.get(j),LocalDate.now(),Turno.NOCHE));
              }
          }
          for (int i = 0; i < equipos_mañana.size(); i++) {
              for (int j = i; j < equipos_mañana.size(); j++) {
-                 this.partidos.add(new Partido(equipos_mañana.get(i),equipos_mañana.get(j),LocalDate.now(),"mañana"));
+                 this.partidos.add(new Partido(equipos_mañana.get(i),equipos_mañana.get(j),LocalDate.now(),Turno.MAÑANA));
              }
          }
         

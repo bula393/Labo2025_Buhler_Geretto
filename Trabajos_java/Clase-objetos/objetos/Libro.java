@@ -1,5 +1,6 @@
 package objetos;
 
+import enums.Editorial;
 import random.Fecha;
 import personas.Persona;
 
@@ -9,12 +10,12 @@ public class Libro {
     private String titulo;
     private Persona autor;
     private int ISBN;
-    private String editorial;
+    private Editorial editorial;
     private Fecha fecha_publicacion;
     private int paginas;
 
 
-    public Libro(String Titulo, Persona Autor, int iSBN, String Editorial, Fecha Fecha_publicacion, int Paginas) {
+    public Libro(String Titulo, Persona Autor, int iSBN, Editorial Editorial, Fecha Fecha_publicacion, int Paginas) {
         titulo = Titulo;
         autor = Autor;
         ISBN = iSBN;
@@ -27,7 +28,7 @@ public class Libro {
         titulo = Titulo;
         autor = Autor;
         ISBN = iSBN;
-        editorial = "santiallana";
+        editorial = Editorial.INTERZONA;
         fecha_publicacion = Fecha_publicacion;
         paginas = Paginas;
     }
@@ -37,7 +38,7 @@ public class Libro {
         titulo = "harry potter";
         autor = Autor;
         ISBN = 1000005;
-        editorial = "enland_potter";
+        editorial = Editorial.KAPELUSZ;
         Fecha f1 = new Fecha(25,8,1985);
         fecha_publicacion = f1;
         paginas = 653;
@@ -63,7 +64,7 @@ public class Libro {
         return fecha_publicacion;
     }
 
-    public String getEditorial() {
+    public Editorial getEditorial() {
         return editorial;
     }
 
@@ -79,7 +80,7 @@ public class Libro {
         this.autor = autor;
     }
 
-    public void setEditorial(String editorial) {
+    public void setEditorial(Editorial editorial) {
         this.editorial = editorial;
     }
 
@@ -115,7 +116,7 @@ public class Libro {
             Fecha fecha1 = new Fecha(1967, 5, 30);
 
 
-            Libro libro1 = new Libro("Cien Años de Soledad", autor1, 123456, "Sudamericana", fecha1, 417);
+            Libro libro1 = new Libro("Cien Años de Soledad", autor1, 123456, Editorial.SUR, fecha1, 417);
             Libro libro2 = new Libro();
 
             System.out.println("=== objetos.Libro 1 ===");

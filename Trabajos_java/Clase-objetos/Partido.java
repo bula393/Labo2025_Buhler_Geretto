@@ -1,12 +1,14 @@
+import enums.Turno;
+
 import java.time.LocalDate;
 
 public class Partido {
     Equipo local;
     Equipo visitante;
     LocalDate fecha;
-    String turno;
+    Turno turno;
 
-    public Partido(Equipo local, Equipo visitante, LocalDate fecha, String turno) {
+    public Partido(Equipo local, Equipo visitante, LocalDate fecha, Turno turno) {
         this.local = local;
         this.visitante = visitante;
         this.fecha = fecha;
@@ -38,11 +40,11 @@ public class Partido {
         this.fecha = fecha;
     }
 
-    public String getTurno() {
+    public Turno getTurno() {
         return turno;
     }
 
-    public void setTurno(String turno) {
+    public void setTurno(Turno turno) {
         this.turno = turno;
     }
     public void mostrarPartido(){

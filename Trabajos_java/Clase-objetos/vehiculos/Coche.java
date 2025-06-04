@@ -1,11 +1,12 @@
 package vehiculos;
 
+import enums.Color;
 public class Coche {
     private String marca;
     private String modelo;
-    private String color;
+    private Color color;
     private int velocidad;
-    public Coche(String marca, String modelo, String color) {
+    public Coche(String marca, String modelo, Color color) {
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
@@ -13,13 +14,13 @@ public class Coche {
     }
 
     public int getVelocidad(){return  velocidad; }
-    public String getMarca() {
+    public MarcaAuto getMarca() {
         return marca;
     }
     public String getModelo() {
         return modelo;
     }
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
     public void setMarca(String marca) {
@@ -28,7 +29,7 @@ public class Coche {
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
     public void setVelocidad(int velocidad){ this.velocidad = velocidad; }
@@ -43,8 +44,8 @@ public class Coche {
     }
 
     public static void main(String[] args) {
-        Coche a1= new Coche("ferrari", "Ferrari 488 GTB", "rojo") ;
-        a1.setColor("negro");
+        Coche a1= new Coche("ferrari", "Ferrari 488 GTB", Color.ROJO) ;
+        a1.setColor(Color.NEGRO);
         a1.setVelocidad(10);
         a1.setMarca("lambo");
         a1.setModelo("huracan");

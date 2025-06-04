@@ -1,5 +1,6 @@
 package random;
 
+import enums.Estado;
 import objetos.Plato;
 import personas.Persona;
 import personas.Persona1;
@@ -14,18 +15,18 @@ public class Pedido {
     ArrayList<Plato> platos;
     Persona1 solicitante;
     LocalTime hora_entrega;
-    Boolean entregado;
+    Estado estado;
 
-    public Pedido(LocalDate fecha_creacion, Boolean entregado, LocalTime hora_entrega, Persona1 solicitante, ArrayList<Plato> plato_pedido) {
+    public Pedido(LocalDate fecha_creacion, Estado estado, LocalTime hora_entrega, Persona1 solicitante, ArrayList<Plato> plato_pedido) {
         this.fecha_creacion = fecha_creacion;
-        this.entregado = entregado;
+        this.estado = estado;
         this.hora_entrega = hora_entrega;
         this.solicitante = solicitante;
         this.platos = plato_pedido;
     }
     public Pedido() {
         this.fecha_creacion = LocalDate.now();
-        this.entregado = true;
+        this.estado = Estado.ENTREGADO;
         this.hora_entrega = LocalTime.now();
         this.solicitante = new Persona1();
         this.platos = new ArrayList<>();
@@ -63,12 +64,12 @@ public class Pedido {
         this.hora_entrega = hora_entrega;
     }
 
-    public Boolean getEntregado() {
-        return entregado;
+    public Estado getEntregado() {
+        return estado;
     }
 
-    public void setEntregado(Boolean entregado) {
-        this.entregado = entregado;
+    public void setEntregado(Estado estado) {
+        this.estado = estado;
     }
     public void addPlato(Plato plato){
         this.platos.add(plato);

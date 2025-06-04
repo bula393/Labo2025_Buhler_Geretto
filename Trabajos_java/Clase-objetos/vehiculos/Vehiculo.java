@@ -1,13 +1,15 @@
 package vehiculos;
 
+import enums.Color;
+
 public class Vehiculo {
     String marca;
     String modelo;
-    String color;
+    Color color;
     int cantidad_ruedad;
     int año_fabricacion;
 
-    public Vehiculo(String marca, String modelo, String color, int cantidad_ruedad, int año_fabricacion) {
+    public Vehiculo(String marca, String modelo, Color color, int cantidad_ruedad, int año_fabricacion) {
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
@@ -39,11 +41,11 @@ public class Vehiculo {
         this.cantidad_ruedad = cantidad_ruedad;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 

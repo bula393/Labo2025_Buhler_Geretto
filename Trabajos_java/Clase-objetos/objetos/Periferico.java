@@ -9,7 +9,7 @@ public class Periferico extends Dispocitivo {
     }
 
     public Periferico() {
-        super("red dragon","af 5",20.5,5);
+        super("red-dragom","af 5",20.5,5);
         puerto = 2;
     }
 
