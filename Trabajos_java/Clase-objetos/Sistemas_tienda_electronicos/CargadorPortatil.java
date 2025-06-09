@@ -1,10 +1,13 @@
 package Sistemas_tienda_electronicos;
 
-public class CargadorPortatil extends Cargador {
+import objetos.Producto;
+
+public class CargadorPortatil extends ProductoElectronico {
     int CantCargas;
+    static Seccion seccion = Seccion.MULTIMEDIA;
 
     public CargadorPortatil(String nombre, double precio, int stock, int cantCargas) {
-        super(nombre, precio, stock);
+        super(nombre, precio, seccion, stock);
         CantCargas = cantCargas;
     }
 

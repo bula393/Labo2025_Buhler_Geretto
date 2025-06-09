@@ -1,6 +1,6 @@
 package objetos;
 
-public class Dispocitivo {
+public abstract class Dispocitivo {
     String fabricante;
     String modelo;
     double precio;

@@ -2,14 +2,14 @@ package vehiculos;
 
 import enums.Color;
 
-public class Vehiculo {
+public abstract class Vehiculo {
     String marca;
     String modelo;
     Color color;
-    int cantidad_ruedad;
+    CantRueda cantidad_ruedad;
     int año_fabricacion;
 
-    public Vehiculo(String marca, String modelo, Color color, int cantidad_ruedad, int año_fabricacion) {
+    public Vehiculo(String marca, String modelo, Color color, CantRueda cantidad_ruedad, int año_fabricacion) {
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
@@ -33,11 +33,11 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
-    public int getCantidad_ruedad() {
+    public CantRueda getCantidad_ruedad() {
         return cantidad_ruedad;
     }
 
-    public void setCantidad_ruedad(int cantidad_ruedad) {
+    public void setCantidad_ruedad(CantRueda cantidad_ruedad) {
         this.cantidad_ruedad = cantidad_ruedad;
     }
 

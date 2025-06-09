@@ -1,10 +1,6 @@
 package formas;
 
-public class Figura {
-    public float area() {
-        return 0;
-    }
-    public float perimetro() {
-        return 0;
-    }
+public abstract class Figura {
+    abstract float area();
+    abstract float perimetro();
 }

@@ -1,18 +1,20 @@
 package objetos;
 
-public class Impresora extends Salida {
-    String MetodoImpresion;
+import enums.MetodoImpre;
 
-    public Impresora(String fabricante, String modelo, double precio, int stock, int puerto, String metodoImpresion) {
+public class Impresora extends Salida {
+    MetodoImpre MetodoImpresion;
+
+    public Impresora(String fabricante, String modelo, double precio, int stock, int puerto, MetodoImpre metodoImpresion) {
         super(fabricante, modelo, precio, stock, puerto);
         MetodoImpresion = metodoImpresion;
     }
 
-    public String getMetodoImpresion() {
+    public MetodoImpre getMetodoImpresion() {
         return MetodoImpresion;
     }
 
-    public void setMetodoImpresion(String metodoImpresion) {
+    public void setMetodoImpresion(MetodoImpre metodoImpresion) {
         MetodoImpresion = metodoImpresion;
     }
 }

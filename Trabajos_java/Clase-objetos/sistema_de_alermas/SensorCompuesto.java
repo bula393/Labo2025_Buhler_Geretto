@@ -47,4 +47,9 @@ public class SensorCompuesto extends Dispocitivo {
     public int calcularMedida(){
         return (this.detectorHumo.getMedida()+this.sensorPrecion.getMedida()+this.sensorTemperatura.getMedida())/3;
     }
+
+    @Override
+    String imprimir() {
+        return "";
+    }
 }

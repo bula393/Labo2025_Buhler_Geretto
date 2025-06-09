@@ -2,7 +2,7 @@ package sistema_de_alermas;
 
 import java.time.LocalDate;
 
-public class Dispocitivo {
+public abstract class Dispocitivo {
     private boolean prendido;
     private int medida;
     private int umbral_incial;
@@ -58,7 +58,5 @@ public class Dispocitivo {
         }
         return "";
     }
-    public String imprimir(){
-        return  "";
-    }
+    abstract String imprimir();
 }

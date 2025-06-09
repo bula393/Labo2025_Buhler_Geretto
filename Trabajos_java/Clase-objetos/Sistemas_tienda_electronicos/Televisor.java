@@ -3,11 +3,14 @@ package Sistemas_tienda_electronicos;
 import enums.Tegnologia;
 import objetos.Producto;
 
-public class Televisor extends Multimedia {
+import java.util.Stack;
+
+public class Televisor extends ProductoElectronico {
     Tegnologia tegnologia;
+    static Seccion seccion = Seccion.MULTIMEDIA;
 
     public Televisor(String nombre, double precio, int stock, Tegnologia tegnologia) {
-        super(nombre, precio, stock);
+        super(nombre, precio,seccion, stock);
         this.tegnologia = tegnologia;
     }
 
