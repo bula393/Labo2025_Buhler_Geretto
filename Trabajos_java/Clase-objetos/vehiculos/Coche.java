@@ -14,7 +14,7 @@ public class Coche {
     }
 
     public int getVelocidad(){return  velocidad; }
-    public MarcaAuto getMarca() {
+    public String getMarca() {
         return marca;
     }
     public String getModelo() {

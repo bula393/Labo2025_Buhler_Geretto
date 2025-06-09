@@ -55,13 +55,13 @@ public class Torneo {
         ArrayList<Equipo> equipos_noche = new ArrayList<>();
 
          for (Equipo equipo:this.equipos) {
-             if (equipo.disponibilidad.equals("tarde")){
+             if (equipo.disponibilidad.equals(Turno.TARDE)){
                  equipos_tarde.add(equipo);
              }
-             else if (equipo.disponibilidad.equals("mañana")){
+             else if (equipo.disponibilidad.equals(Turno.MAÑANA)){
                  equipos_mañana.add(equipo);
              }
-             else if (equipo.disponibilidad.equals("noche") ){
+             else if (equipo.disponibilidad.equals(Turno.NOCHE) ){
                  equipos_noche.add(equipo);
              }
 
