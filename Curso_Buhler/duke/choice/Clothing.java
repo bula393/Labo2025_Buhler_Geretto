@@ -12,7 +12,7 @@ public class Clothing {
         this.descripcion = "remera";
         this.price = 100;
         this.size = "small";
-        if (this.price < this.minPrice) {
+        if (this.price < Clothing.minPrice) {
             this.price = this.minPrice;
         }
     }
@@ -20,8 +20,8 @@ public class Clothing {
         this.price = price;
         this.size = size;
         this.descripcion = descripcion;
-        if (this.price < this.minPrice) {
-            this.price = this.minPrice;
+        if (this.price < Clothing.minPrice) {
+            this.price = Clothing.minPrice;
         }
     }
 
@@ -39,8 +39,8 @@ public class Clothing {
 
     public void setPrice(double price) {
         this.price = price;
-        if (this.price < this.minPrice) {
-            this.price = this.minPrice;
+        if (this.price < Clothing.minPrice) {
+            this.price = Clothing.minPrice;
         }
     }
 
@@ -52,7 +52,10 @@ public class Clothing {
         this.size = size;
     }
     public void print() {
-        System.out.println("prenda:" + this.descripcion + ", precio:" + this.price + "$,tamaño:" + this.size);
+        System.out.println(this.toString());
     }
-
+    @override
+    public String toString() {
+        return "descripcion='" + descripcion + ", price=" + price +
+                "$, size=" + size;
 }
