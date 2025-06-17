@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ShopApp {
     public static void main(String[] args) {
-
+        println("minimum price: " + Clothing.minPrice);
         Customer customer = new Customer("Pinky",3);
         Clothing item1 = new Clothing("Blue jacket",20.9,"M");
         Clothing item2 = new Clothing("Orange T-Shirt", 12.5,"s");
