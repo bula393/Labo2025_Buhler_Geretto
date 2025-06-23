@@ -6,8 +6,8 @@ public class Clothing {
     private String descripcion;
     private double price;
     private String size;
-    private final int minPrice = 10;
-    private final double tax = 0.2;
+    static private final int minPrice = 10;
+    stactic private final double tax = 0.2;
     public Clothing() {
         this.descripcion = "remera";
         this.price = 100;
@@ -52,7 +52,7 @@ public class Clothing {
         this.size = size;
     }
     public void print() {
-        System.out.println(this.toString());
+        System.out.println(this);
     }
     @override
     public String toString() {

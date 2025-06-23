@@ -5,7 +5,7 @@ import objetos.Producto;
 import java.util.ArrayList;
 
 public class SistemaElectronicos {
-    ArrayList<Producto>  productos;
+    private ArrayList<Producto>  productos;
 
     public SistemaElectronicos(ArrayList<Producto> productos) {
         this.productos = productos;

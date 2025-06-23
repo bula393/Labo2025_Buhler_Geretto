@@ -2,8 +2,8 @@ package Sistemas_tienda_electronicos;
 import objetos.Producto;
 
 public class Equipo_Sonido extends ProductoElectronico {
-    Boolean blutooth;
-    static Seccion seccion = Seccion.CARGADOR;
+    private Boolean blutooth;
+    private static Seccion seccion = Seccion.CARGADOR;
 
     public Equipo_Sonido(String nombre, float precio, int stock, Boolean blutooth) {
         super(nombre, precio,seccion, stock);
