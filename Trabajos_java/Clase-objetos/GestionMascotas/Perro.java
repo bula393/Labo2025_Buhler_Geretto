@@ -13,6 +13,7 @@ public class Perro extends Mascota {
         for (int i = 0; i < super.getAlegria(); i++) {
             saludo+="guau ";
         }
+        restaralegria();
         return saludo;
     }
 

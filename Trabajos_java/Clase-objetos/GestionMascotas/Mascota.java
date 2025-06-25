@@ -43,6 +43,11 @@ public abstract class Mascota {
     public void sumaralegria(){
         alegria++;
     }
+    public void restaralegria(){
+        if (alegria>1) {
+            alegria--;
+        }
+    }
     public boolean isDueño(Persona1 persona){
         if (dueño.equals(persona)){
             return true;

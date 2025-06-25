@@ -24,6 +24,7 @@ public class Pajaro extends Mascota{
         for (int i = 0; i < super.getAlegria(); i++) {
             saludo+="pio ";
         }
+        restaralegria();
         return saludo;
     }
 
