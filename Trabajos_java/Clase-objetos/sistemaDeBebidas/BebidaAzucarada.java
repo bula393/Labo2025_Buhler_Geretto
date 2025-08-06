@@ -2,7 +2,7 @@ package sistemaDeBebidas;
 
 public class BebidaAzucarada extends Bebida{
     private int cantidadAzucar;
-    static private int positividad = 1;
+    private static  int positividad = 1;
 
     public BebidaAzucarada(String nombre, int negatividad, int cantidadAzucar) {
         super(nombre, positividad, (cantidadAzucar * 10));
@@ -22,9 +22,6 @@ public class BebidaAzucarada extends Bebida{
         return positividad;
     }
 
-    @Override
-    public void setPositividad(int positividad) {
-        BebidaAzucarada.positividad = positividad;
-    }
+
 
 }
