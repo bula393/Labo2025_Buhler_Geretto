@@ -51,15 +51,47 @@ public class Paciente {
     public PesoYAltura medida_fechaparticular(LocalDate fecha){
         return pesoaltura.get(fecha);
     }
-    public PesoYAltura Promedio(int año){
-            for (Map.Entry<LocalDate, PesoYAltura> promedio : pesoaltura.entrySet()){
-            PesoYAltura PromedioActual = promedio.getKey();
-            PesoYAltura promediado;
-                promediado = promedio.getValue();
-                if(fecha < )
-                System.out.println("El promedio el ultimo año es:" + )
+    public PesoYAltura Promedio(int anio){
+        int contador = 0;
+        PesoYAltura promedio = new PesoYAltura(0,0);
+        for (Map.Entry<LocalDate, PesoYAltura> entrada : pesoaltura.entrySet()){
+                PesoYAltura PromedioActual = entrada.getValue();
+                LocalDate fecha = entrada.getKey();
+                PesoYAltura peso_altura = entrada.getValue();
+                if(fecha.getYear() == anio ) {
+                    contador++;
+                    promedio.setAltura(promedio.getAltura()+peso_altura.getAltura());
+                    promedio.setPeso(promedio.getPeso()+peso_altura.getPeso());
+                }
 
             }
+        promedio.setAltura(promedio.getAltura()/contador);
+        promedio.setPeso(promedio.getPeso()/contador);
+        return promedio;
+    }
+    public PesoYAltura porcentajeComparacion(PesoYAltura medicioninicial, PesoYAltura medicionFinal){
+        PesoYAltura diferenciafechas;
+        diferenciafechas = new PesoYAltura((medicioninicial.getPeso() - medicionFinal.getPeso())/100,(medicioninicial.getAltura()-medicionFinal.getAltura())/100);
+        return diferenciafechas;
+    }
+    public int porcentajeCrecimiento(LocalDate fecha1,LocalDate fecha2){
+        int porcentaje = 0;
+        int comprobacion = 0;
+        PesoYAltura medicioninicial;
+        PesoYAltura medicionFinal;
+        for (Map.Entry<LocalDate,PesoYAltura> medicion : pesoaltura.entrySet()){
+            if (medicion.getKey().equals(fecha1)){
+                medicioninicial = new PesoYAltura(medicion.getValue().getPeso(),medicion.getValue().getAltura());
+            } else if (medicion.getKey().equals(fecha2)) {
+                medicionFinal = new PesoYAltura(medicion.getValue().getPeso(),medicion.getValue().getAltura());
+            }
+
+        }
+        if (comprobacion == 2){
+
+        }
+        return porcentaje;
     }
 }
+
 

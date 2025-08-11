@@ -23,8 +23,15 @@ public class PesoYAltura {
     public int getAltura() {
         return altura;
     }
+    public int getporcentajeComparacion(){
+        return
+    }
 
     public void setAltura(int altura) {
         this.altura = altura;
+    }
+    public void set(int altura,int peso){
+        this.setPeso(peso);
+        this.setAltura(altura);
     }
 }
