@@ -23,9 +23,6 @@ public class PesoYAltura {
     public int getAltura() {
         return altura;
     }
-    public int getporcentajeComparacion(){
-        return
-    }
 
     public void setAltura(int altura) {
         this.altura = altura;
