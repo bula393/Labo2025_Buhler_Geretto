@@ -39,7 +39,7 @@ public class Familia {
 public Pariente PersonaMenosCalorias (){
     Pariente flaco = new Pariente(LocalDate.now(),"",new ArrayList<>());
     for (Pariente pariente : parientes) {
-        if(pariente.caliriasConsumidad()>flaco.caliriasConsumidad()){
+        if(pariente.caliriasConsumidad()<flaco.caliriasConsumidad()){
             flaco = pariente;
         }
     }
