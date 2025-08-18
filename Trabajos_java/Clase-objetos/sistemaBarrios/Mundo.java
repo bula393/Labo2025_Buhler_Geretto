@@ -1,21 +1,34 @@
 package sistemaBarrios;
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class Mundo {
     HashSet<Continente> continentes;
-    HashSet<Lugar> lugares;
+    HashMap<Integer,Lugar> lugares;
 
-    public Mundo(HashSet<Continente> continentes, HashSet<Lugar> lugares) {
+    public Mundo(HashSet<Continente> continentes, HashMap<Integer,Lugar> lugares) {
         this.continentes = continentes;
         this.lugares = lugares;
     }
 
-    public HashSet<Lugar> getLugares() {
+    public HashMap<Integer,Lugar> getLugares() {
         return lugares;
     }
 
-    public void setLugares(HashSet<Lugar> lugares) {
+    public void añadirL (Lugar l){
+        lugares.put(l.getCodigo(),l);
+    }
+    public void eliminarL (Lugar l){
+        lugares.remove(l);
+    }
+    public void replace(int codigo,Lugar l){
+        lugares.put(codigo,l);
+    }
+    public int BuscarPoblacionPorCodigo(int codigo){
+        return lugares.get(codigo).calculaPoblacion();
+    }
+    public void setLugares(HashMap<Integer,Lugar> lugares) {
         this.lugares = lugares;
     }
 
@@ -40,9 +53,9 @@ public class Mundo {
         return paisMasPoblacion;
     }
     public Pais paisMenosPoblacion(){
-        Pais paisMenosPoblacion = (Continente) continentes.toArray()[0]);
+        Pais paisMenosPoblacion = null;
         for (Continente continente : continentes){
-            if (paisMenosPoblacion.calculaPoblacion() > continente.paisMasPoblacion().calculaPoblacion()){
+            if (paisMenosPoblacion == null || paisMenosPoblacion.calculaPoblacion() > continente.paisMasPoblacion().calculaPoblacion()){
                 paisMenosPoblacion = continente.paisMasPoblacion();
             }
         }
