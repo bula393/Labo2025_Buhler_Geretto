@@ -16,10 +16,6 @@ public class Barrio extends Lugar {
         this.poblacion = poblacion;
     }
 
-    @Override
-    public void addLugar() {
-
-    }
 
     @Override
     public int calculaPoblacion() {
