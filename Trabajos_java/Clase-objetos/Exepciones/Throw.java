@@ -7,9 +7,13 @@ public class Throw {
             if (nombre == null){
                 throw new NullPointerException("el nombre esta vacio");
             }
+            System.out.println(nombre.length());
         }
         catch (NullPointerException e){
             System.out.println(e);
+        }
+        finally {
+            System.out.println("hecho buhler");
         }
     }
 

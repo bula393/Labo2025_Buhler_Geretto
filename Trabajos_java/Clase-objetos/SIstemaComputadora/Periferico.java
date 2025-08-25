@@ -1,4 +1,4 @@
-package objetos;
+package SIstemaComputadora;
 
 public class Periferico extends Dispocitivo {
     private int puerto;

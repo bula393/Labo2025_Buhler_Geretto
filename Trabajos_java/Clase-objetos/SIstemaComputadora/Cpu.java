@@ -1,4 +1,4 @@
-package objetos;
+package SIstemaComputadora;
 
 public class Cpu extends Dispocitivo {
     public Cpu(String fabricante, String modelo, double precio, int stock) {

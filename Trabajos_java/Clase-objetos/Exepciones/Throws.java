@@ -14,6 +14,9 @@ public class Throws {
             catch (NullPointerException e){
                 System.out.println("no se puede imprimir un nombre vacio " + e);
             }
+            finally {
+                System.out.println("hecho buhler");
+            }
         }
 
 }

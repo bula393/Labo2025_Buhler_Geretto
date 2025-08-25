@@ -1,5 +1,6 @@
 package objetos;
 
+import SIstemaComputadora.Salida;
 import enums.MetodoImpre;
 
 public class Impresora extends Salida {

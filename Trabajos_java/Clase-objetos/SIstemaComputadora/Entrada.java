@@ -1,4 +1,4 @@
-package objetos;
+package SIstemaComputadora;
 
 public class Entrada extends Periferico {
     private String tipoConector;

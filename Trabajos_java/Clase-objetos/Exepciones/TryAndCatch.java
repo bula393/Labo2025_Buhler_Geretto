@@ -9,5 +9,8 @@ public class TryAndCatch {
             System.out.println("El nombre esta vacio");
             System.out.println(e);
         }
+        finally {
+            System.out.println("hecho buhler");
+        }
     }
 }

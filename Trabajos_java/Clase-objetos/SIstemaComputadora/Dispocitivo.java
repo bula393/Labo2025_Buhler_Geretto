@@ -1,4 +1,6 @@
-package objetos;
+package SIstemaComputadora;
+
+import java.awt.font.TextHitInfo;
 
 public abstract class Dispocitivo {
     String fabricante;
@@ -43,5 +45,11 @@ public abstract class Dispocitivo {
 
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+    public void eligir(){
+        if (this.stock == 0){
+            throw new SinStock("no que stock del componente"+ this.modelo);
+        }
+        this.stock = this.stock - 1;
     }
 }
