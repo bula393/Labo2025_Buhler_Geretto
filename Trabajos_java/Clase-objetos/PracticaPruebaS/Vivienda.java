@@ -53,26 +53,7 @@ public abstract class  Vivienda {
         this.dueño = dueño;
         AñokilowaC = añokilowaC;
     }
-//public Double AplicarDescuento(int anio) {
-//    // Obtenemos el año actual
-//
-//
-//    // Si el año ingresado es distinto al actual, procedemos
-//    if (anio != anioActual) {
-//        // Aquí deberías tener una forma de obtener los kWh del año pasado
-//        double kWhAnioPasado = obtenerConsumoPorAnio(anio); // Este es un ejemplo, deberías tenerlo definido
-//        double kWhActual = obtenerConsumoPorAnio(anioActual); // Lo mismo aquí
-//
-//        // Si hubo una reducción de consumo, aplicamos un descuento
-//        if (kWhAnioPasado > kWhActual) {
-//            double diferencia = kWhAnioPasado - kWhActual;
-//            double descuento = calcularDescuento(diferencia); // Define cómo calcular el descuento
-//            return descuento;
-//        }
-//    }
-//
-//    return 0.0; // No hay descuento
-//}
+
     public Double calcularConsumo(int anio) {
         Double KWhTotal = 0.0;
         HashMap<Mes, Integer> kilowaC = AñokilowaC.get(anio);
@@ -80,11 +61,16 @@ public abstract class  Vivienda {
             KWhTotal += wats;
         }
         return KWhTotal;
-    }   public Double AplicarDescueto(int anio)){
-        int anioActual = LocalDate.now().getYear();
-      if((anio != anioActual)){
-          AñokilowaC.get(anio) - anioActual;z|
+    }
+    public boolean conparar_porcentaje_por_mes(int anio){
+        HashMap<Mes,Integer> mesesAnioActual = AñokilowaC.get(anio);
+        HashMap<Mes,Integer> mesesAnioPasado = AñokilowaC.get(anio-1);
+        for (Mes mes : Mes.values()){
+            if (mesesAnioActual.get(mes)>= (mesesAnioPasado.get(mes)*0.9) ){
+                return true;
+            }
         }
+        return false;
     }
         public abstract Double calcularCosteConsume(int anio);
 }

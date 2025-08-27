@@ -3,6 +3,7 @@ import java.time.LocalDate;
 import java.util.HashMap;
 
 public class Departamento extends Vivienda{
+    private static int precio = 50;
     private int cantidadambientes;
 
     public int getCantidadambientes() {
@@ -13,12 +14,15 @@ public class Departamento extends Vivienda{
         this.cantidadambientes = cantidadambientes;
     }
 
-    public Departamento(int direccion, String codigopostal, Dueño dueño, HashMap<Mes, Integer> kilowaC, int cantidadambientes) {
+    public Departamento(int direccion, String codigopostal, Dueño dueño,HashMap<Integer, HashMap<Mes, Integer>> kilowaC) {
         super(direccion, codigopostal, dueño, kilowaC);
         this.cantidadambientes = cantidadambientes;
     }
     @Override
     public Double calcularCosteConsume(int anio) {
-        return this.calcularConsumo(anio) * 50 ;
+        if (this.conparar_porcentaje_por_mes(anio)){
+            return this.calcularConsumo(anio) * precio * 0.95 ;
+        }
+        return this.calcularConsumo(anio) * precio ;
     }
 }

@@ -3,6 +3,7 @@ import java.time.LocalDate;
 import java.util.HashMap;
 
 public class Casa extends Vivienda{
+    private static int precio = 100;
     private int metrosC;
     private int metrosD;
 
@@ -29,7 +30,10 @@ public class Casa extends Vivienda{
     }
     @Override
     public Double calcularCosteConsume(int anio) {
-        return this.calcularConsumo(anio) * 100 ;
+        if (this.conparar_porcentaje_por_mes(anio)){
+            return this.calcularConsumo(anio) * precio * 0.95 ;
+        }
+        return this.calcularConsumo(anio) * precio ;
     }
 
 }
