@@ -2,7 +2,7 @@ package sistema_de_alermas;
 
 import java.time.LocalDate;
 
-public abstract class Dispocitivo {
+public abstract class  Dispocitivo {
     private boolean prendido;
     private int medida;
     private int umbral_incial;

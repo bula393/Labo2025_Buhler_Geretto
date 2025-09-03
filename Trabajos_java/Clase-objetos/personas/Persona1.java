@@ -3,11 +3,24 @@ package personas;
 import java.time.LocalDate;
 
 public abstract class Persona1 {
-    String nombre;
-    String apellido;
-    LocalDate fechaNacimiento;
+    private String nombre;
+    private String apellido;
+    private LocalDate fechaNacimiento;
+    private int dni;
     int direccion;
     int codigopostal;
+
+    public Persona1(String nombre, String apellido, LocalDate fechaNacimiento, int dni) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.dni = dni;
+    }
+
+    public Persona1(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
 
     public Persona1(String nombre, String apellido, LocalDate fechaNacimiento, int direccion, int codigopostal) {
         this.nombre = nombre;
@@ -15,6 +28,14 @@ public abstract class Persona1 {
         this.fechaNacimiento = fechaNacimiento;
         this.direccion = direccion;
         this.codigopostal = codigopostal;
+    }
+
+    public int getDni() {
+        return dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
     }
 
     public int getDireccion() {
