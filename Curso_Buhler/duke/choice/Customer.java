@@ -1,5 +1,6 @@
 package duke.choice;
 
+import java.security.AlgorithmParameterGenerator;
 import java.util.ArrayList;
 
 public class Customer {
@@ -79,5 +80,16 @@ public class Customer {
         }
     }
         return total;
+    }
+    public double precioPromedioPorTalle(String size) throws ArithmeticException {
+        double total = 0;
+        int contador = 0;
+        for (Clothing c : ropas) {
+            if (c.getSize().equals(size)) {
+                contador++;
+                total = total + c.getPrice();
+            }
+        }
+        return total/ropas.size();
     }
 }

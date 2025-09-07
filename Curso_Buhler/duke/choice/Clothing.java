@@ -7,7 +7,13 @@ public class Clothing {
     private double price;
     private String size;
     static private final int minPrice = 10;
-    stactic private final double tax = 0.2;
+    static private final double tax = 0.2;
+    public static int getMinPrice() {
+        return minPrice;
+    }
+    public static double getTax() {
+        return tax;
+    }
     public Clothing() {
         this.descripcion = "remera";
         this.price = 100;
@@ -52,10 +58,11 @@ public class Clothing {
         this.size = size;
     }
     public void print() {
-        System.out.println(this);
+        System.out.println(this.toString());
     }
     @override
     public String toString() {
         return "descripcion='" + descripcion + ", price=" + price +
                 "$, size=" + size;
+}
 }
