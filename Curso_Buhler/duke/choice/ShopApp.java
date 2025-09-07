@@ -1,6 +1,7 @@
 package duke.choice;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ShopApp {
     public static void main(String[] args) {
@@ -19,12 +20,13 @@ public class ShopApp {
         customer.setRopas(ropas);
         System.out.println(customer.getSize());
         System.out.println("hola " + customer.getName());
-        
+        System.out.println("promedio:" + customer.precioPromedioPorTalle(customer.getSize()));
         try {
             System.out.println("promedio:" + customer.precioPromedioPorTalle("L"));
         } catch (ArithmeticException e) {
             e.printStackTrace();
         }
+        Arrays.sort(customer.getRopas().toArray());
         //item1.print();
         //item2.print();
         //total += ((item1.getPrice() + item2.getPrice()*2)*(1+tax));

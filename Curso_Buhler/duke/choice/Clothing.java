@@ -2,7 +2,7 @@ package duke.choice;
 
 import java.util.ArrayList;
 
-public class Clothing {
+public class Clothing implements comparable<Clothing> {
     private String descripcion;
     private double price;
     private String size;
@@ -65,4 +65,8 @@ public class Clothing {
         return "descripcion='" + descripcion + ", price=" + price +
                 "$, size=" + size;
 }
+    @override
+    public int compareTo(Clothing other) {
+        return this.descripcion.compareTo(other.descripcion);
+    }
 }

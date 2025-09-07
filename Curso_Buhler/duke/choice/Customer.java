@@ -85,7 +85,7 @@ public class Customer {
         double total = 0;
         int contador = 0;
         for (Clothing c : ropas) {
-            if (c.getSize().equals(size)) {
+            if (c.getSize().equalsIgnoreCase(size)) {
                 contador++;
                 total = total + c.getPrice();
             }
