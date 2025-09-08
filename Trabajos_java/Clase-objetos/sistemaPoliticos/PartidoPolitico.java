@@ -1,6 +1,7 @@
 package sistemaPoliticos;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.HashSet;
 
 public class PartidoPolitico {
@@ -58,7 +59,7 @@ public class PartidoPolitico {
     public static void main(String[] args) {
         PalomaMensajera p1= new PalomaMensajera("carl","halcon","rojo",true);
         Telefono te1 = new Telefono(84556,"samsung","Galaxi fold 9",false,56,87965121,CompaniaTelefonica.PERSONAL);
-        Trabajador tr1 = new Trabajador("nico","orniero", LocalDate.now(),47985658,4575774,56.2);
+        Trabajador tr1 = new Trabajador("nico","orniero", LocalDate.now(),47985658,4575774,56.2, LocalTime.now(),LocalTime.now());
         PartidoPolitico partido = new PartidoPolitico("tralaleros","generalPaz 4585",925,new HashSet<>());
         partido.addMensajero(p1);
         partido.addMensajero(te1);
