@@ -2,7 +2,7 @@ package duke.choice;
 
 import java.util.ArrayList;
 
-public class Clothing implements comparable<Clothing> {
+public class Clothing implements Comparable<Clothing> {
     private String descripcion;
     private double price;
     private String size;
