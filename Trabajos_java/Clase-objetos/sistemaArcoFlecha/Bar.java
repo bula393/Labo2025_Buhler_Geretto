@@ -61,15 +61,7 @@ public class Bar {
     public void setBeneficioAcumulados(HashSet<BeneficioGC> beneficioAcumulados) {
         this.beneficioAcumulados = beneficioAcumulados;
     }
-    public Diana masPuntajes(){
-        Diana masPuntajes = (Diana) dianas.stream().toArray()[0];
-        for (Diana d : dianas){
-            if (d.cantPuntajes() > masPuntajes.cantPuntajes()){
-                masPuntajes = d;
-            }
-        }
-        return masPuntajes;
-    }
+
     public void addBeneficio(Beneficio b){
         beneficio.add(b);
         if (b instanceof BeneficioGC){

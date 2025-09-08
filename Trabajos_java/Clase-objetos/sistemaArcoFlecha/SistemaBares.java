@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class SistemaBares {
     private HashSet<Bar> bares;
-    private HashSet<String> tiposDianas;
+    private HashSet<Diana> tiposDianas;
     private HashSet<Beneficio> beneficios;
 
     public SistemaBares(HashSet<Bar> bares, HashSet<String> tiposDianas, HashSet<Beneficio> beneficios) {
@@ -36,6 +36,22 @@ public class SistemaBares {
     public void setBeneficios(HashSet<Beneficio> beneficios) {
         this.beneficios = beneficios;
     }
+    public Diana masPuntajes(){
+        Diana masPuntajes = (Diana) tiposDianas.stream().toArray()[0];
+        for (Diana d : tiposDianas){
+            if (d.cantPuntajes() > masPuntajes.cantPuntajes()){
+                masPuntajes = d;
+            }
+        }
+        return masPuntajes;
+    }
+    public static void main(String[] args) {
+        DianaCircular dci = new DianaCircular();
+        DianaCuadrada dcu = new DianaCuadrada();
+        BeneficioTrago t1 = new BeneficioTrago();
+        BeneficioComida c1 = new BeneficioComida();
+        Bar b1 = new Bar();
 
+    }
 
 }

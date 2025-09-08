@@ -2,7 +2,7 @@ package personas;
 
 import java.time.LocalDate;
 
-public abstract class Persona1 {
+public class Persona1 {
     private String nombre;
     private String apellido;
     private LocalDate fechaNacimiento;
