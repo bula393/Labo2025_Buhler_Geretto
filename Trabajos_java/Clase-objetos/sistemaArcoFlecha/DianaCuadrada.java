@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class DianaCuadrada extends Diana{
     private Double lado;
 
-    public DianaCuadrada(String nombre, HashMap<ColeresDiana, Integer> puntajes, NivelDificultad dificultad, Double lado) {
+    public DianaCuadrada(String nombre, HashMap<Integer,ColeresDiana> puntajes, NivelDificultad dificultad, Double lado) {
         super(nombre, puntajes, dificultad);
         this.lado = lado;
     }

@@ -6,7 +6,7 @@ public class DianaRectangular extends Diana{
     private Double base;
     private Double altura;
 
-    public DianaRectangular(String nombre, HashMap<ColeresDiana, Integer> puntajes, NivelDificultad dificultad, Double base, Double altura) {
+    public DianaRectangular(String nombre, HashMap<Integer,ColeresDiana> puntajes, NivelDificultad dificultad, Double base, Double altura) {
         super(nombre, puntajes, dificultad);
         this.base = base;
         this.altura = altura;
