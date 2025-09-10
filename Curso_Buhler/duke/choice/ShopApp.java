@@ -49,7 +49,7 @@ public class ShopApp {
                     .get("/items",lista).build();
                 ServerConfiguration config = ServerConfiguration.builder()
                         .bindAddress(InetAddress.getLocalHost())
-                        .port(11111).build();
+                        .port(8888).build();
                 WebServer ws = WebServer.create(config,routing);
                 ws.start();
             } catch (UnknownHostException e) {
