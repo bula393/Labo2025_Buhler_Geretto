@@ -60,12 +60,14 @@ public class Clothing implements Comparable<Clothing> {
     public void print() {
         System.out.println(this.toString());
     }
-    @override
+
+    @Override
     public String toString() {
         return "descripcion='" + descripcion + ", price=" + price +
                 "$, size=" + size;
 }
-    @override
+
+    @Override
     public int compareTo(Clothing other) {
         return this.descripcion.compareTo(other.descripcion);
     }

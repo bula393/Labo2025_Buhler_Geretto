@@ -43,18 +43,18 @@ public class ShopApp {
         System.out.println("total: " + customer.getTotalClothingCost());
     
     // Server parte
-        try {
-                ListaPrendas lista = new ListaPrendas(customer.getRopas());
-                Routing routing = Routing.builder()
-                    .get("/items",lista).build();
-                ServerConfiguration config = ServerConfiguration.builder()
-                        .bindAddress(InetAddress.getLocalHost())
-                        .port(8888).build();
-                WebServer ws = WebServer.create(config,routing);
-                ws.start();
-            } catch (UnknownHostException e) {
-                e.printStackTrace();
-                throw new RuntimeException(e);
-            }
-    }
+//        try {
+//                ListaPrendas lista = new ListaPrendas(customer.getRopas());
+//                Routing routing = Routing.builder()
+//                    .get("/items",lista).build();
+//                ServerConfiguration config = ServerConfiguration.builder()
+//                        .bindAddress(InetAddress.getLocalHost())
+//                        .port(8888).build();
+//                WebServer ws = WebServer.create(config,routing);
+//                ws.start();
+//            } catch (UnknownHostException e) {
+//                e.printStackTrace();
+//                throw new RuntimeException(e);
+//            }
+   }
 }

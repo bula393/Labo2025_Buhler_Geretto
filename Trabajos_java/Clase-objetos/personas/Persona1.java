@@ -17,6 +17,12 @@ public class Persona1 {
         this.dni = dni;
     }
 
+    public Persona1(String nombre, String apellido, LocalDate fechaNacimiento) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
     public Persona1(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
