@@ -38,4 +38,5 @@ public class Niño extends Paciente implements CalificadosTratamiento {
     public int costo() {
         return Niveltolerancia * 450000;
     }
+
 }

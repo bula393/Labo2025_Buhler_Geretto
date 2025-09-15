@@ -42,4 +42,9 @@ public class SistemaFundacion {
     public int cantPAcientesNoTratamiento(){
         return pacientes.size() - calificados.size();
     }
+    public void ejecutarTratamientoDIatios(){
+        for (CalificadosTratamiento c : calificados.keySet()){
+            calificados.put(c,calificados.get(c)+1);
+        }
+    }
 }
