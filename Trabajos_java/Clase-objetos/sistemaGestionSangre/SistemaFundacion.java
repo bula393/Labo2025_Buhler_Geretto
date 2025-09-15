@@ -47,4 +47,7 @@ public class SistemaFundacion {
             calificados.put(c,calificados.get(c)+1);
         }
     }
+    public static void main(String[] args) {
+
+    }
 }
