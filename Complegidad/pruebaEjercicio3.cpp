@@ -11,7 +11,7 @@ while ( i < v.size () ) {
 int j = i + 1;
 while ( j < v.size () && v [ i ] == v [ j ]) {
 j ++; // O{1}
-} // lo de adentro * O{n}
+} // lo de adentro * O{n-1}
 meseta = j - i ; i = j ; //  3, O{1}
 if ( meseta > maxMeseta ) { // O{1}
 maxMeseta = meseta ; // O{1}
