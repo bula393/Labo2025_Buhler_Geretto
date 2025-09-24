@@ -7,8 +7,16 @@ public class Persona1 {
     private String apellido;
     private LocalDate fechaNacimiento;
     private int dni;
-    int direccion;
-    int codigopostal;
+    private int direccion;
+    private int codigopostal;
+    private String localidad;
+
+    public Persona1(String nombre, String localidad, LocalDate fechaNacimiento, String apellido) {
+        this.nombre = nombre;
+        this.localidad = localidad;
+        this.fechaNacimiento = fechaNacimiento;
+        this.apellido = apellido;
+    }
 
     public Persona1(String nombre, String apellido, LocalDate fechaNacimiento, int dni) {
         this.nombre = nombre;
