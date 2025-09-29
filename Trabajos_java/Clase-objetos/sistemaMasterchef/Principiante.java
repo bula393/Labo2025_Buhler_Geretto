@@ -35,10 +35,10 @@ public class Principiante extends Participante implements platosEntrada{
     }
 
     @Override
-    public boolean cocinarServirEntrada(Plato entrada) {
+    public boolean cocinarServirEntrada(Plato entrada) throws ErrorNoPuedeUsarUnIngrediente {
         for (Ingrediente ingrediente : entrada.getIngredientesNecesario().keySet()){
             if (this.ingredientesProhibidos.contains(ingrediente)){
-                return false;
+                throw new ErrorNoPuedeUsarUnIngrediente();
             }
         }
         return true;

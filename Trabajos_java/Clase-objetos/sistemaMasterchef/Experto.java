@@ -30,22 +30,20 @@ public class Experto extends Participante implements platosEntrada,PlatoPrincipa
     }
 
     @Override
-    public boolean cocinarServirPrincipal(Plato Platoprincipal) {
+    public boolean cocinarServirPrincipal(Plato Platoprincipal) throws ErrorNohaytiempo{
         if (tiempoActual-Platoprincipal.getTiempoDeCoccion() >=0){
+            this.tiempoActual -= Platoprincipal.getTiempoDeCoccion();
             return true;
         }
-        else{
-
-        }
+        throw new ErrorNohaytiempo();
     }
 
     @Override
-    public boolean cocinarServirEntrada(Plato entrada) {
+    public boolean cocinarServirEntrada(Plato entrada) throws ErrorNohaytiempo{
         if (tiempoActual-entrada.getTiempoDeCoccion() >=0){
+            this.tiempoActual -= entrada.getTiempoDeCoccion();
             return true;
         }
-        else{
-
-        }
+        throw new ErrorNohaytiempo();
     }
 }

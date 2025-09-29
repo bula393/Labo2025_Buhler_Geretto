@@ -44,14 +44,14 @@ public class Intermedio extends Participante implements PlatoPrincipal{
     }
 
     @Override
-    public boolean cocinarServirPrincipal(Plato platoprincipal) {
+    public boolean cocinarServirPrincipal(Plato platoprincipal) throws ErrorNoHayStock,ErrorNoHayStockSuficiente{
         for (Ingrediente ingrediente : platoprincipal.getIngredientesNecesario().keySet()){
             if (!this.ingredienteStock.containsKey(ingrediente)){
-                return false;
+                throw new ErrorNoHayStock();
             }
             else {
                 if (!hayStock(this.ingredienteStock.get(ingrediente)-platoprincipal.getIngredientesNecesario().get(ingrediente))){
-                    return false;
+                    throw new ErrorNoHayStockSuficiente(ingrediente.toString());
                 }
             }
         }
